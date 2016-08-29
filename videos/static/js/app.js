@@ -18,7 +18,7 @@ $( document ).ready(function() {
       $("h1").css("text-decoration", "none")
     })
 
-    // Testing
+    // This code will change the position of the sidebar, based on the scroll position.
     var windw = this;
 
     $.fn.followTo = function ( pos ) {
@@ -33,24 +33,21 @@ $( document ).ready(function() {
                   top: "50px"
                 })
               }
-
             } else {
               if ($this.css("top") == "50px") {
                 $this.animate({
                   top: "260px"
                 })
               }
-
-
             }
         });
     };
 
     $('.moreinfo-sidebar').followTo(190);
 
+    // This code is to clear the floats on the individual videos based on the window width, so the fixed sidebar does not overlap.
     function change_class_on_resize(){
       var window_width = $( window ).width();
-      // console.log(window_width)
       if (window_width < 1350) {
         $(".individual_video").addClass("clear_class")
       } else {
@@ -63,7 +60,6 @@ $( document ).ready(function() {
     $( window ).resize(function() {
       change_class_on_resize();
     });
-
 
 
 });
