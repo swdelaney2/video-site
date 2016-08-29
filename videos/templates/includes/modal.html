@@ -1,0 +1,31 @@
+<!-- Button trigger modal -->
+<div type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{inc.title|slugify}}">
+  More Info
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="{{inc.title|slugify}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">{{inc.title}}</h4>
+      </div>
+      <div class="modal-body">
+        {% if inc.image %}
+        <div class="image_right">
+          <img src="/{{inc.image}}">
+        </div>
+        {% endif %}
+        <p>{% if inc.youtube_id %}<a href="https://www.youtube.com/watch?v={{inc.youtube_id}}" target="_blank">YouTube</a>{% endif %}
+        {% if inc.vimeo_id and inc.youtube_id %} | <a href="{{inc.vimeo_id}}" target="_blank">Vimeo</a>{% endif %}
+        {% if inc.vimeo_id and not inc.youtube_id %}<a href="{{inc.vimeo_id}}" target="_blank">Vimeo</a>{% endif %}
+        {% if inc.password %}<br><strong>Password:</strong> {{inc.password}}{% endif %}</p>
+        {{inc.description|safe}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

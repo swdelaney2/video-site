@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+  {% block content %}
+    {% if user.is_superuser %}
+      <h2>Add Video</h2>
+        <form enctype="multipart/form-data" action="../add/" method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <input type="submit" value="Submit" />
+        </form>
+
+        <script type="text/javascript">
+          $("label[class='required']").append("*").css("color", "red")
+        </script>
+    {% else %}
+      <h1>Please log-in.</h1>
+    {% endif %}
+  {% endblock %}

@@ -1,0 +1,86 @@
+html, body {
+  background: rgb(244, 244, 244) !important;
+}
+
+a {
+  color: rgb(108, 160, 176);
+}
+
+#main_header {
+  margin-left: 2em;
+  background-image: url("../images/sony.jpg");
+  height: 200px;
+  opacity: .4;
+  background-position: center;
+  text-align: center;
+  position: relative;
+}
+
+.modal-body {
+  font-weight: normal;
+  text-align: justify;
+}
+
+.fixed_header_text {
+  position: absolute;
+  top: 7em;
+  width: 100%;
+  text-align: center;
+  color: black;
+}
+
+.container {
+  width: 90% !important;
+  margin-top: 2em;
+  margin-left: 2em !important;
+  padding: 2em !important;
+  color: rgb(102, 102, 102);
+}
+
+.individual_video {
+  margin: 1em;
+  padding: 3em;
+  display: none;
+  float: left;
+  background: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.individual_video h1 {
+  color: rgb(222, 130, 143);
+}
+
+.moreinfo-sidebar {
+  margin-top: 1em;
+  background: rgb(68, 68, 68);
+  padding: 3em;
+  color: white;
+  font-weight: normal;
+  /*position: fixed !important;
+  top: 260px;
+  right: 150px;
+  width: 325px;*/
+}
+
+img {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  margin: 1em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image_right {
+  float: right;
+  text-align: center;
+}
+
+.image_right img {
+  width: 150px;
+  margin-left: 2em;
+}
+
+.description {
+  display: none;
+}

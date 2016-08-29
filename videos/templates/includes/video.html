@@ -1,0 +1,15 @@
+<div class="individual_video">
+    <strong><h1>{{inc.title}}</h1>{% if user.is_superuser %}<br><a href={% url 'videos:edit' inc.pk %}>Edit</a>{% endif %}
+  {% if inc.image %}
+  <p>
+    <img src="/{{inc.image}}">
+  </p>
+  {% endif %}
+  <p>
+    {% if inc.youtube_id %}<a href="https://www.youtube.com/watch?v={{inc.youtube_id}}" target="_blank">YouTube</a>{% endif %}
+    {% if inc.vimeo_id and inc.youtube_id %} | <a href="https://www.vimeo.com/{{inc.vimeo_id}}" target="_blank">Vimeo</a>{% endif %}
+    {% if inc.vimeo_id and not inc.youtube_id %}<a href="{{inc.vimeo_id}}" target="_blank">Vimeo</a>{% endif %}
+    {% if inc.password %}<br><strong>Password:</strong> {{inc.password}}{% endif %}
+    {% if inc.description %}{% include "includes/modal.html" %}<div class="description"><h1>{{inc.title}}</h1>{{inc.description|safe}}</div>{% endif %}
+  </p>
+</div>
