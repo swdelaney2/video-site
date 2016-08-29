@@ -14,11 +14,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <div class="container">
+    <div class="container_no_bootstrap">
       {% block content %}
       {% endblock %}
-      <hr>
+  
       <footer>
+        <hr>
         <a href="{% url 'videos:index' %}">Home</a>{% if user.is_superuser %} - <a href="{% url 'videos:add' %}">Add New Video</a> - <a href="{% url 'videos:logout_view' %}">Log out</a>{% endif %}
       </footer>
     </div>

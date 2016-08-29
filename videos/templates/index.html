@@ -2,21 +2,17 @@
 
   {% block content %}
 
-    <div class="row">
       <div id="main_header">
       </div>
       <div class="fixed_header_text">
         <br><h1>All Videos</h1>
       </div>
-      <div class="col-md-8">
+      <div class="left_bar_videos">
         {% for inc in all_videos %}
           {% include "includes/video.html" %}
         {% endfor %}
       </div>
-      <div class="clearfix visible-xs"></div>
-      <div class="clearfix visible-sm"></div>
-      <div class="moreinfo-sidebar col-md-4">
+      <div class="moreinfo-sidebar fixed_sidebar">
         Hover over any video for more information!
       </div>
-    </div>
   {% endblock %}
